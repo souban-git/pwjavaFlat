@@ -1,0 +1,4 @@
+rootProject.name = 'pwjavaFlat'
+include 'pwcore1'
+include 'pwapptest1'
+
