@@ -16,6 +16,9 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
     implementation 'commons-io:commons-io:2.15.1'
     implementation 'io.cucumber:cucumber-java:7.14.0'
+    implementation 'org.junit.platform:junit-platform-launcher:1.10.2'
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
 }
 
 repositories {
@@ -34,4 +37,8 @@ publishing {
             from components.java
         }
     }
+}
+
+test{
+    useJUnitPlatform()
 }

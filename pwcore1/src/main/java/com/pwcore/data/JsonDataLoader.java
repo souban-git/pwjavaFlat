@@ -40,11 +40,11 @@ public class JsonDataLoader {
             URL resource = classLoader.getResource("testdata/" + fileName);
 
             if (resource == null) {
-                throw new RuntimeException("❌ File not found: testdata/" + fileName);
+                throw new RuntimeException("File not found: testdata/" + fileName);
             }
 
             File file = new File(resource.toURI());
-            System.out.println("✅ Loading file from: " + file.getAbsolutePath());
+            System.out.println("Loading file from: " + file.getAbsolutePath());
 
             return new ObjectMapper().readValue(file, new TypeReference<List<Map<String, Object>>>() {});
         } catch (Exception e) {

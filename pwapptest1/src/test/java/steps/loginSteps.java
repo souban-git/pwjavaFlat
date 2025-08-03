@@ -7,6 +7,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.LoginPage;
 
+import java.util.Map;
+
 
 public class loginSteps extends PlaywrightManager {
 
@@ -14,10 +16,11 @@ public class loginSteps extends PlaywrightManager {
     public void userIsOnLoginPage() {
         // This step can be used to navigate to the login page
         // For example, using Playwright or Selenium WebDriver
-        String username = (String) TestDataContext.get().get(0).get("username");
-        String password = (String) TestDataContext.get().get(0).get("password");
+//        Map<String, Object> data = TestDataContext.current();
+        String username = TestDataContext.get("username");
+        String password = TestDataContext.get("password");
         getPage().navigate("https://demoqa.com/login");
-       new LoginPage().enterLoginCredentials("Souban", "Police@99");
+       new LoginPage().enterLoginCredentials(username, password);
     }
 
     @Then("^verify user is logged in successfully$")
